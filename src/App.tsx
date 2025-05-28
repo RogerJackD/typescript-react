@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
-import Titulo from './components/Titulo'
+import Titulo from './components/Titulo';
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Inicio from './pages/Inicio'
-import { Contacto } from './pages/Contacto'
+import { Contacto, Inicio , AcercaDe } from "./pages"
 
 
 function App() {
@@ -24,12 +23,14 @@ function App() {
         <BrowserRouter>
 
           <nav>
-            <Link to="/">Inicio</Link> | <Link to="/contacto">Contacto</Link>
+            <Link to="/">Inicio</Link> | <Link to="/contacto">Contacto</Link> | <Link to="/acercade">Acerca de</Link>
           </nav>
 
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/acercade" element={<AcercaDe/>} />
+
           </Routes>
 
         </BrowserRouter>

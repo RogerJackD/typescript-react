@@ -1,5 +1,5 @@
-import { useState, FormEvent } from "react";
-
+import { useState } from "react";
+import type { FormEvent } from "react";
 export const Contacto = () => {
     const [nombre, setNombre] = useState("");
     const [mensaje, setMensaje] = useState("");
