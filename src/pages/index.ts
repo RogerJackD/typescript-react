@@ -1,5 +1,5 @@
-export * from "./AcercaDe";
-export * from "./Contacto";
-export * from "./Inicio";
-export * from "./RegistroEstudiante";
+export * from "./tarea1/AcercaDe";
+export * from "./tarea1/Contacto";
+export * from "./tarea1/Inicio";
+export * from "./tarea1/RegistroEstudiante";
 

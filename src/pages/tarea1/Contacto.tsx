@@ -27,6 +27,7 @@ export const Contacto = () => {
                             value={nombre}
                             onChange={(e) => setNombre(e.target.value)}
                             required
+                            className="border border-white"
                         />
                     </div>
                     <div>
@@ -35,6 +36,7 @@ export const Contacto = () => {
                             value={mensaje}
                             onChange={(e) => setMensaje(e.target.value)}
                             required
+                            className="border border-white"
                         />
                     </div>
                     <button type="submit">Enviar</button>

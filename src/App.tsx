@@ -1,61 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css';
 
-import Titulo from './components/Titulo';
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Contacto, Inicio , AcercaDe } from "./pages"
-
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { MostrarTarea1 } from './pages/tarea1/MostrarTarea1';
+import {MostrarTarea2} from './pages/tarea2/MostrarTarea2';
+import { AcercaDe, Contacto, Inicio } from './pages';
+import { MostrarTarea3 } from './pages/tarea3/MostrarTarea3';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const navigate = useNavigate();
+  
+  const irTarea1 = () =>{
+    navigate("/tarea1")
+  }
+
+
+  const irTarea2 = () =>{
+    navigate("/tarea2")
+  }
+
+  const irTarea3 = () =>{
+    navigate("/cursos")
+  }
 
   return (
     <>
+      
+      <Routes>
+        <Route path="/tarea1" element={<MostrarTarea1/>} />
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/acercade" element={<AcercaDe/>} />
 
-        <div>
-          <Titulo texto="enviando texto desde app" />
-        </div>
-
-
-        <BrowserRouter>
-
-          <nav>
-            <Link to="/">Inicio</Link> | <Link to="/contacto">Contacto</Link> | <Link to="/acercade">Acerca de</Link>
-          </nav>
-
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/acercade" element={<AcercaDe/>} />
-
-          </Routes>
-
-        </BrowserRouter>
+        <Route path="/tarea2" element={<MostrarTarea2/>} />
 
 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Route path="/cursos/*" element={<MostrarTarea3/>} />
+
+
+        
+
+      </Routes> 
+
+      <div className='flex gap-4'>
+        <button onClick={irTarea1}>VER TAREA 1</button>
+        <button onClick={irTarea2}>VER TAREA 2</button>
+        <button onClick={irTarea3}>VER TAREA 3</button>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+
+
+
+        
+
+        
     </>
   )
 }

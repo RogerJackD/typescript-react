@@ -22,6 +22,7 @@ export const AcercaDe = () => {
             id="nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="border border-white"
           />
 
           <label htmlFor="correo">Correo</label>
@@ -30,6 +31,7 @@ export const AcercaDe = () => {
             id="correo"
             value={correo}
             onChange={(e) => setCorreo(e.target.value)}
+            className="border border-white"
           />
 
           <label htmlFor="mensaje">Mensaje</label>
@@ -37,6 +39,7 @@ export const AcercaDe = () => {
             id="mensaje"
             value={mensaje}
             onChange={(e) => setMensaje(e.target.value)}
+            className="border border-white"
           />
 
           <button type="submit">Enviar</button>
